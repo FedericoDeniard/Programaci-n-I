@@ -10,7 +10,16 @@ B = [[-2,7,2],
      [4,-2,8],
      [6,-5,7]]
 
-def multiply_array(A: list, B:list):
+def multiply_array(A: list, B:list) -> str:
+    """Verifies if the arrays can be multiplied
+
+    Args:
+        A (list): First array to multiply
+        B (list): Second array to multiply
+
+    Returns:
+        str: Returns a message with the multyply of the array formatted or with a message that the arrays can't be multiplied
+    """
     result = 0
     if  can_multiply(A,B):
         result = multiply_matrix(A,B)

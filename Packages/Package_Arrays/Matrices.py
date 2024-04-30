@@ -1,4 +1,13 @@
 def can_multiply(A: list, B: list) -> bool:
+    """Checks if the arrays can be multiplied
+
+    Args:
+        A (list): First array
+        B (list): Second array
+
+    Returns:
+        bool: returns True if can be multiplied, False otherwise
+    """
     columns_A = len(A[0])
     rows_B = len(B)
     validate = False
@@ -6,7 +15,16 @@ def can_multiply(A: list, B: list) -> bool:
         validate = True
     return validate
 
-def multiply_matrix(A: list, B: list) -> list:
+def multiply_matrix(A: list, B: list) -> str:
+    """Multiplies 2 arrays withouth caring about validation
+
+    Args:
+        A (list): First Array
+        B (list): Second Array
+
+    Returns:
+        str: Returns the result formatted
+    """
 
     rows_A = len(A)
     columns_B = len(B[0])
