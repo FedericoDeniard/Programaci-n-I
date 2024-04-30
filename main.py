@@ -1,5 +1,10 @@
 # Desarrollar un programa que sea capaz de multiplicar dos matrices ingresadas por el usuario.
 # Validar las dimensiones de cada una para que sea consistente con el procedimiento
+'''
+Nombre: Federico
+Apellido: Deniard
+'''
+
 from Packages.Package_Arrays.Matrices import *
 
 A = [[6,4,-5],
