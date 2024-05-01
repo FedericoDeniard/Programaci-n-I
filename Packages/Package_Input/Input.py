@@ -73,3 +73,18 @@ def get_string( message: str, max_length = True) -> str:
             text = input(message)
     return text
 
+def get_max_number(list: list) -> int:
+    """Returns de max value from a list
+
+    Args:
+        list (list): The array of numbers you are going to compare
+
+    Returns:
+        int: The max value
+    """
+    number = 0
+    for i in range(len(list)):
+        if list[i] > number or i == 1:
+            number = list[i]
+    return number
+
