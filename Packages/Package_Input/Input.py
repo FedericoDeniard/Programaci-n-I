@@ -1,5 +1,5 @@
 from Packages.Package_Input.Validate import *
-def get_int(message: str, error_message: str, attempts = 0, min = True, max = True,) -> int|None:
+def get_int(message: str, error_message = "Error", attempts = 0, min = True, max = True,) -> int|None:
     """Obtains an integer from the user.
 
     Args:

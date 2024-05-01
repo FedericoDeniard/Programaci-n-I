@@ -1,3 +1,17 @@
+from Packages.Package_Input.Input import *
+from os import system
+
+def new_array() -> list:
+    rows = get_int("Ingrese la cantidad de filas del array: ")
+    columns = get_int("Ingrese la cantidad de columnas del array: ")
+    array = [[0] * columns for _ in range(rows)]
+    for i in range(len(array)):
+        for j in range(len(array[0])):
+            array[i][j] = get_int(f"Ingrese el valor de la posicion [{i+1}][{j+1}]: ")
+
+    return array
+
+
 def can_multiply(A: list, B: list) -> bool:
     """Checks if the arrays can be multiplied
 
@@ -39,9 +53,20 @@ def multiply_matrix(A: list, B: list) -> str:
                 multiplicacion = valor_A * valor_B
                 actual_cell += multiplicacion
             C[i][j] = actual_cell
-    message = ""
-    for i in range(len(C)):
-        for j in range(len(C[i])):
-            message += f"{C[i][j]} "
-        message += f"\n"
-    return message
+
+    return C
+
+def multiply_array() -> list:
+    print("Primera matriz")
+    A = new_array()
+    system("cls")
+    print("Segunda matriz")
+    B = new_array()
+    system("cls")
+    result = 0
+    if  can_multiply(A,B):
+        result = multiply_matrix(A,B)
+    else:
+        print("Las matrices ingresadas no se pueden multiplicar")
+        result = []
+    return result
