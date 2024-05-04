@@ -20,10 +20,16 @@ def validate_number(number: int|float, min =  True, max = True) -> bool :
     return is_valid
 
 
-
-def validate_length(max_length: int, text: str) -> bool:
+def check_max_length(max_length: int, text: str) -> bool:
     is_valid = True
     if len(text) > max_length:
+        is_valid = False
+        
+    return is_valid
+
+def check_min_length(min_length: int, text: str) -> bool:
+    is_valid = True
+    if len(text) < min_length:
         is_valid = False
         
     return is_valid

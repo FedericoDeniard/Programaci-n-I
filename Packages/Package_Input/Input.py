@@ -1,4 +1,6 @@
 from Packages.Package_Input.Validate import *
+from os import system
+
 def get_int(message: str, error_message = "Error", attempts = 0, min = True, max = True,) -> int|None:
     """Obtains an integer from the user.
 
@@ -20,6 +22,8 @@ def get_int(message: str, error_message = "Error", attempts = 0, min = True, max
             number = None
             break
         print(error_message)
+        system("pause")
+        system("cls")
         number = input(message)
         number = int(number)
         attempt +=1
@@ -56,7 +60,7 @@ def get_float(message: str, error_message: str,  attempts = 0, min = True, max =
         
     return number
 
-def get_string( message: str, max_length = True) -> str:
+def get_string( message: str, max_length = True , min_length = True) -> str:
     """Obtains a string from the user
 
     Args:
@@ -67,11 +71,17 @@ def get_string( message: str, max_length = True) -> str:
         str|None: Returns a string.
     """
     text = input(message)
-    if type(max_length) == int:
-        while not validate_length(max_length = max_length, text = text):
-            print(f"El texto debe ser menor a {max_length} caracteres")
+    if type(max_length) == int or (max_length) == int:
+        while not check_max_length(max_length, text) or not check_min_length(min_length,text):
+            if type(min_length) == int and type(max_length) == int:
+                print(f"El texto debe tener por lo menos {min_length} caracteres y {max_length} como maximo")
+            elif type(min_length) == int:
+                print(f"El texto debe tener por lo menos {min_length} caracteres")
+            else:
+                print(f"El texto debe tener {max_length} como maximo")
             text = input(message)
     return text
+
 
 def get_max_number(list: list) -> int:
     """Returns de max value from a list
