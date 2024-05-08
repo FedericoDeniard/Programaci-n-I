@@ -8,7 +8,13 @@ Apellido: Deniard
 from Packages.Package_Arrays.Matrices import *
 from Packages.Package_Input.Input import *
 
-def print_array(array: list) -> str:
+def print_array(array: list):
+    """ Recieves an array and prints a formatted version of it.
+
+    Args:
+        array (list): The array you want to print.
+
+    """
     message = "[ "
     for i in range(len(array)):
         for j in range(len(array[i])):
