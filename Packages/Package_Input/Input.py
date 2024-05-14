@@ -97,4 +97,3 @@ def get_max_number(list: list) -> int:
         if list[i] > number or i == 1:
             number = list[i]
     return number
-
