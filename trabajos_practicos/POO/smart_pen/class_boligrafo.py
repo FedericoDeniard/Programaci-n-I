@@ -31,9 +31,9 @@ class Boligrafo:
 
     def recargar(self,cantidad: int):
         self.cantidad_tinta += cantidad
-        resto = self.cantidad_tinta - 100
-        if self.cantidad_tinta > 100:
-            self.cantidad_tinta = 100
+        resto = self.cantidad_tinta - self.capacidad_maxima
+        if self.cantidad_tinta > self.capacidad_maxima:
+            self.cantidad_tinta = self.capacidad_maxima
 
         if resto < 1:
             mensaje = "Lapicera recargada"
