@@ -16,7 +16,6 @@ def get_int(message: str, error_message = "Error", attempts = 0, min = True, max
     """
     attempt = 1
     number = input(message)
-    number = int(number)
     while not validate_number(number=number, min=min, max=max):
         if attempt == attempts:
             number = None
@@ -25,11 +24,10 @@ def get_int(message: str, error_message = "Error", attempts = 0, min = True, max
         system("pause")
         system("cls")
         number = input(message)
+        attempt +=1        
+    if number != None:
         number = int(number)
-        attempt +=1
-        
     return number
-
 
 def get_float(message: str, error_message: str,  attempts = 0, min = True, max = True) -> float|None:
     """Obtains a float from the user

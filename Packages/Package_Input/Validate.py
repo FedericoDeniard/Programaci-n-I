@@ -1,4 +1,4 @@
-def validate_number(number: int|float, min =  True, max = True) -> bool :
+def validate_number(number: str, min =  True, max = True) -> bool :
     """Validates the range of an interger.
 
     Args:
@@ -10,7 +10,8 @@ def validate_number(number: int|float, min =  True, max = True) -> bool :
         _type_: True or False depending on the number's range.
     """
     is_valid = True
-    if type(number) == int or type(number) == float:
+    if number.isdigit():
+        number = int(number)
         if type(min) != bool or type(max) != bool:
             if number < min or number > max:
                 is_valid = False
