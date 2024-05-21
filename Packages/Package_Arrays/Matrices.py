@@ -1,5 +1,6 @@
 from Packages.Package_Input.Input import *
 from os import system
+from Packages.Package_System.system import *
 
 def new_array() -> list:
     """Asks how many rows and colums are in the array, in order to set them.
@@ -69,10 +70,10 @@ def multiply_array() -> list:
     """
     print("Primera matriz")
     A = new_array()
-    system("cls")
+    clear_screen()
     print("Segunda matriz")
     B = new_array()
-    system("cls")
+    clear_screen()
     if  can_multiply(A,B):
         result = multiply_matrix(A,B)
     else:

@@ -1,5 +1,6 @@
 from Packages.Package_Input.Validate import *
 from os import system
+from Packages.Package_System.system import *
 
 def get_int(message: str, error_message = "Error", attempts = 0, min = True, max = True,) -> int|None:
     """Obtains an integer from the user.
@@ -21,8 +22,8 @@ def get_int(message: str, error_message = "Error", attempts = 0, min = True, max
             number = None
             break
         print(error_message)
-        system("pause")
-        system("cls")
+        input("Presione una tecla para continuar..\n")
+        clear_screen()
         number = input(message)
         attempt +=1        
     if number != None:

@@ -6,6 +6,7 @@ Apellido: Deniard
 from Packages.Package_Input.Input import *
 from Packages.Package_Arrays.Array_Generales import *
 from os import system
+from Packages.Package_System.system import *
 
 first_item = False
 numbers = [False] * 10
@@ -53,6 +54,6 @@ while True:
             break
         case _:
             print("El numero ingresado no es valido")
-    system("pause")
-    system("cls")
+    input("Presione una tecla para continuar..\n")
+    clear_screen()
 

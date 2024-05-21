@@ -1,7 +1,7 @@
 
 from Packages.Package_Input.Input import *
 from random import *
-
+from Packages.Package_System.system import *
 
 def create_id(ids: list) -> str:
     letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
@@ -30,7 +30,7 @@ def login(data_base, max_attempts = 0 ):
     is_valid = False
     attempt = 1
     id = get_string("Ingrese su numero de legajo: ",10,10)
-    system("cls")
+    clear_screen()
     while not check_id(id, data_base):
         if attempt == max_attempts:
             print("Se llego a los intentos maximos")
@@ -51,36 +51,36 @@ def load_payment(array: list):
     
 
 def show_lines_buses_payments(array: list):
-    system("cls")
+    clear_screen()
     for i in range(len(array)):
         print("")
         for j in range(len(array[i])):
             print(f"Linea {i + 1}, colectivo {j + 1}: {array[i][j]} ")
-    system("pause")
+    input("Presione una tecla para continuar..\n")
 
 
 def show_lines_payments(array:list):
-    system("cls")
+    clear_screen()
     for i in range(len(array)):
         total = 0
         for j in range(len(array[i])):
             total += array[i][j]
         print(f"Linea {i + 1}: {total}")
-    system("pause")
+    input("Presione una tecla para continuar..\n")
 
 def show_buses_payments(array:list):
-    system("cls")
+    clear_screen()
     bus_index = 1
     for i in range(len(array)):
         for j in range(len(array[i])):
             print(f"Coche {bus_index}: {array[i][j]}")
-    system("pause")
+    input("Presione una tecla para continuar..\n")
 
 def show_payments(array: list):
-    system("cls")
+    clear_screen()
     total = 0
     for i in range(len(array)):
         for j in range(len(array[i])):
             total += array[i][j]
     print(f"Total: {total}")
-    system("pause")
+    input("Presione una tecla para continuar..\n")

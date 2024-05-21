@@ -11,7 +11,7 @@ Determinar:
 from Packages.Package_Input.Input import *
 from Packages.Package_Input.Validate import validate_number
 from os import system
-
+from Packages.Package_System.system import *
 
 employees = 1
 
@@ -24,7 +24,7 @@ def survey(employees_amount: int) -> list:
     Returns:
         list: An array with all surveyed employees information
     """
-    system("cls")
+    clear_screen()
     employees_list = [[0]* 4 for _ in range(employees_amount)]
     for i in range(employees_amount):
         employees_list[i][0] = get_string(f"Empleado {i+1}. Ingrese su nombre: ")
@@ -33,7 +33,7 @@ def survey(employees_amount: int) -> list:
             employees_list[i][2] = get_string(f"Empleado {i+1}. Ingrese su género ('M': Masculino, 'F': Femenino, 'O': Otro): ",1)
         while employees_list[i][3] != "AI" and employees_list[i][3] != "VR" and employees_list[i][3] != "IOT":
             employees_list[i][3] = get_string(f"Empleado {i+1}. Ingrese la aplicación que quiere desarrollar (AI / VR / IOT): ",3)
-        system("cls")
+        clear_screen()
 
     first_message = 0
     second_message = 0
@@ -50,7 +50,7 @@ def survey(employees_amount: int) -> list:
     
     second_message = (second_message / employees_amount) * 100
     
-    system("cls")
+    clear_screen()
     print(f"Cantidad de empleados de genero masculino que votaron por IOT o AI cuya edad este entre 25 y 50 inclusive: {first_message}\nPorcentaje de empleados que no votaron por AI, siempre y cuando su genero no sea femenino o su edad este entre los 33 y 40: {second_message}%\n{third_message}")
     return employees_list
 
