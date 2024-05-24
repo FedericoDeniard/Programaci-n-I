@@ -1,20 +1,13 @@
+
+"""
+Nombre: Federico
+Apellido: Deniard
+"""
 from Packages.Package_Input.Input import *
 from trabajos_practicos.CRUD.Package_crud.read import *
 from trabajos_practicos.CRUD.Package_crud.update import *
 from trabajos_practicos.CRUD.Package_crud.delete import *
 from trabajos_practicos.CRUD.Package_crud.create import *
-
-
-
-
-"""
-ID : Incremental
-Nombre
-Apellido
-DNI
-Puesto
-Salario
-"""
 
 def menu():
     employees = [
@@ -100,7 +93,7 @@ def menu():
     }
 ]
 
-    max_employees = 1
+    max_employees = 20
     while True:
         option = get_int(message="1. Ingresar empleado\n2. Modificar empleado\n3. Eliminar empleado\n4. Mostrar todos\n5. Calcular salario promedio\n6. Buscar empleado por DNI\n7. Ordenar empleados\n8. Salir\n")
         match option:
@@ -113,7 +106,8 @@ def menu():
             case 4:
                 show_employees(employees)
             case 5:
-                print(get_average_salary(employees))
+                clear_screen()
+                print(f"El salario promedio es de: {get_average_salary(employees)}")
                 input("Presione una tecla para continuar...")
                 clear_screen()
             case 6:
@@ -121,6 +115,7 @@ def menu():
             case 7:
                 sort_array(employees)
             case 8:
+                clear_screen()
                 break
 
 menu()

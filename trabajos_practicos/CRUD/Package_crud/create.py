@@ -6,8 +6,10 @@ def id_generator(employees: list) -> int:
         id = employees[-1]["id"] + 1
     else:
         id = 1
+    return id
 
 def new_employee(employees: list,max_employees):
+    clear_screen()
     if len(employees) < max_employees:
         positions = ["Gerente","Supervisor","Analista","Encargado","Asistente"]
         id = id_generator(employees)
@@ -37,5 +39,3 @@ def new_employee(employees: list,max_employees):
         print("No podemos agregar más empleados al sistema")
         input("Presione una tecla para continuar...")
     clear_screen()
-
-    return id

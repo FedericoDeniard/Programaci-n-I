@@ -2,6 +2,7 @@ from Packages.Package_Input.Input import *
 from trabajos_practicos.CRUD.Package_crud.read import *
 
 def update_employee(employees: list):
+    clear_screen()
     id = get_int("Ingrese el ID del empleado a modificar: ")
     id_valid = check_id(employees,id)
     if id_valid != None:
@@ -9,6 +10,7 @@ def update_employee(employees: list):
         while True:
             show_employee(employee_copy)
             option = get_int(message="¿Que desea modificar?\n1. Nombre\n2. Apellido\n3. DNI\n4. Puesto\n5. Salario\n6. Guardar\n7. Cancelar\n",min=1,max=7)
+            clear_screen()
             match option:
                 case 1:
                     update_name(employee_copy)
@@ -21,15 +23,19 @@ def update_employee(employees: list):
                 case 5:
                     update_salary(employee_copy)
                 case 6:
-                    print(f"Nuevos valores\n{show_employee(employee_copy)}")            
+                    clear_screen()
+                    print(f"Nuevos valores")            
+                    show_employee(employee_copy)
                     if get_confirm():
                         employees[id_valid] = employee_copy
                         break
                 case 7:
-                    print("Carga cancelada")
-                    break
+                    if get_confirm():
+                        print("Carga cancelada")
+                        break
     else:
         print(f"No se encontró empleado con id {id}")
+    clear_screen()
         
 def update_name(employee: dict):
     name = get_string(message="Ingrese el nuevo nombre del empleado: ",min_length=4)

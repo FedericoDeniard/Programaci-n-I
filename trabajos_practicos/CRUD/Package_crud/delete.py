@@ -2,6 +2,7 @@ from trabajos_practicos.CRUD.Package_crud.read import *
 
 
 def delete_employee(employees: list):
+    clear_screen()
     id = get_int("Ingrese el ID del empleado a eliminar: ")
     id_valid = check_id(employees,id)
     if id_valid != None:
