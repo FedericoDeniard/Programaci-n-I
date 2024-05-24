@@ -30,7 +30,7 @@ def get_int(message: str, error_message = "Error", attempts = 0, min = True, max
         number = int(number)
     return number
 
-def get_float(message: str, error_message: str,  attempts = 0, min = True, max = True) -> float|None:
+def get_float(message: str, error_message = "Error",  attempts = 0, min = True, max = True) -> float|None:
     """Obtains a float from the user
 
     Args:
@@ -96,3 +96,12 @@ def get_max_number(list: list) -> int:
         if list[i] > number or i == 1:
             number = list[i]
     return number
+
+def get_confirm():
+    options = ["s","n"]
+    option = get_string(message="¿Desea confirmar? [S/n]\n",min_length=1,max_length=1)
+    while option not in option:
+        option = get_string(message="¿Desea confirmar? [S/n]\n",min_length=1,max_length=1)
+    return option == "s"
+    
+        
