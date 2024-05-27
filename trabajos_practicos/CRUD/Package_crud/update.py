@@ -6,7 +6,15 @@ def update_employee(employees: list):
     id = get_int("Ingrese el ID del empleado a modificar: ")
     id_valid = check_id(employees,id)
     if id_valid != None:
-        employee_copy = employees[id_valid]
+        employee_copy = {
+            "id": employees[id_valid]["id"],
+            "name": employees[id_valid]["name"],
+            "lastname": employees[id_valid]["lastname"],
+            "dni": employees[id_valid]["dni"],
+            "position": employees[id_valid]["position"],
+            "salary" : employees[id_valid]["salary"]
+        }
+
         while True:
             show_employee(employee_copy)
             option = get_int(message="¿Que desea modificar?\n1. Nombre\n2. Apellido\n3. DNI\n4. Puesto\n5. Salario\n6. Guardar\n7. Cancelar\n",min=1,max=7)
