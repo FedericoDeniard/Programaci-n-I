@@ -1,0 +1,18 @@
+[
+  {
+    "id": 2,
+    "name": "Juan",
+    "lastname": "Perez",
+    "dni": 350000,
+    "position": "Gerente",
+    "salary": 61234567
+  },
+  {
+    "id": 4,
+    "name": "Luis",
+    "lastname": "Ramirez",
+    "dni": 270000,
+    "position": "Analista",
+    "salary": 83456789
+  }
+]
