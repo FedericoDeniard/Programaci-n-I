@@ -12,6 +12,11 @@ def check_id(employees: list, id: int):
             break
     return is_valid
 
+def get_config(path: str) -> dict:
+    with open(path,'r') as config:
+        content = json.load(config)
+    return content
+
 def check_dni(employees:list, dni: int):
     is_valid = None
     for i in range(len(employees)):
@@ -103,21 +108,16 @@ def fetch_deleted(path = 'empleados_bajas.json') -> list:
         deleted_employees = json.load(file)
     return deleted_employees
 
-def salary_report(employees: list):
-    with open('trabajos_practicos/CRUD/reports/index.txt', 'r') as report_number:
-        index = report_number.read()
-        index = index
+def salary_report(employees: list, last_report: list):
     today = datetime.now().strftime("%Y/%m/%d")
-    message = f"Reporte N°: {index}\nFecha: {today}\nCantidad de coincidencias: {len(employees)}"
-    with open('trabajos_practicos/CRUD/reports/index.txt', 'w') as report_number:
-        report_number.write(str(int(index) + 1))
+    message = f"Reporte N°: {last_report[0]}\nFecha: {today}\nCantidad de coincidencias: {len(employees)}"
     clear_screen()
     print(message)
     print(show_employees(employees))
     input("Presione una tecla para continuar...")
-
+    last_report[0] = last_report[0] + 1
     with open('trabajos_practicos/CRUD/reports/reports.txt','a') as report:
-        report.write(message +'\n' + show_employees(employees)+'\n'  +'-' * 40 + '\n')
+        report.write(message +'\n' + show_employees(employees)+'\n'  +'-' * 60 + '\n')
 
 def filter_salary(employees: list):
     salary = get_int(message="Se mostraran todos los salarios superiores a lo que ingrese.\nIngrese el salario mínimo a filtrar: ",min=234315,max=10000000)

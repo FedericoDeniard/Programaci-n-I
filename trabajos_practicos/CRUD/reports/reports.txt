@@ -1,36 +1,21 @@
-Reporte N°: 23
+Reporte N°: 1
+Fecha: 2024/06/04
+Cantidad de coincidencias: 5
+    Nombre     |   Apellido    |    Puesto     |    Salario    
+      Ana      |     María     |   Encargado   |   94567890    
+     María     |   González    |  Supervisor   |   72345678    
+    Joaquin    |    Ferman     |   Asistente   |    650000     
+     Linus     |   Torvalds    |    Gerente    |    1500000    
+     Lara      |   Cappelli    |    Gerente    |    800000     
+----------------------------------------
+Reporte N°: 2
 Fecha: 2024/06/04
 Cantidad de coincidencias: 0
     Nombre     |   Apellido    |    Puesto     |    Salario    
 ----------------------------------------
-Reporte N°: 24
+Reporte N°: 3
 Fecha: 2024/06/04
 Cantidad de coincidencias: 1
     Nombre     |   Apellido    |    Puesto     |    Salario    
-   Federico    |    Deniard    |  Supervisor   |    450000     
-----------------------------------------
-Reporte N°: 26
-Fecha: 2024/06/04
-Cantidad de coincidencias: 2
-    Nombre     |   Apellido    |    Puesto     |    Salario    
-      Ana      |     María     |   Encargado   |   94567890    
-     María     |   González    |  Supervisor   |   72345678    
-----------------------------------------
-Reporte N°: 27
-Fecha: 2024/06/04
-Cantidad de coincidencias: 1
-    Nombre     |   Apellido    |    Puesto     |    Salario    
-   Federico    |    Deniard    |  Supervisor   |    450000     
-----------------------------------------
-Reporte N°: 28
-Fecha: 2024/06/04
-Cantidad de coincidencias: 1
-    Nombre     |   Apellido    |    Puesto     |    Salario    
-   Federico    |    Deniard    |  Supervisor   |    450000     
-----------------------------------------
-Reporte N°: 29
-Fecha: 2024/06/04
-Cantidad de coincidencias: 1
-    Nombre     |   Apellido    |    Puesto     |    Salario    
-   Federico    |    Deniard    |  Supervisor   |    450000     
+     Linus     |   Torvalds    |    Gerente    |    1500000    
 ----------------------------------------

@@ -2,22 +2,11 @@ from Packages.Package_Input.Input import *
 from trabajos_practicos.CRUD.Package_crud.read import show_employee
 import json
 
-def id_generator(employees: list,deleted_employees:list) -> int: 
-    max_employee_id = employees[-1]["id"] if len(employees) > 0 else 0
-    max_deleted_employee_id = deleted_employees[-1]["id"] if len(deleted_employees) > 0 else 0
-    if max_employee_id == 0 and max_deleted_employee_id == 0:
-        id = 1
-    elif max_employee_id >= max_deleted_employee_id:
-        id = max_employee_id + 1
-    else:
-        id = max_deleted_employee_id + 1
-    return id
-
-def new_employee(employees: list,max_employees: int,deleted_employees:list):
+def new_employee(employees: list,max_employees: int, last_id: list):
     clear_screen()
     if len(employees) < max_employees:
         positions = ["Gerente","Supervisor","Analista","Encargado","Asistente"]
-        id = id_generator(employees,deleted_employees)
+        id = last_id[0] + 1
         name = get_string(message="Nombre del empleado: ",min_length=4)
         name = name.capitalize()
         lastname = get_string(message="Apellido del empleado: ",min_length=4)
@@ -35,6 +24,7 @@ def new_employee(employees: list,max_employees: int,deleted_employees:list):
         confirm = get_confirm()
         if confirm:
             employees.append(employee)
+            last_id[0] = id
             print(f"{name} {lastname} agregado con éxito.")
             input("Presione una tecla para continuar...")
         else:
@@ -56,3 +46,7 @@ def save_employees(employees:list,path = 'empleados.csv'):
 def save_deleted_employees(deleted_employees: list, path = 'empleados_bajas.json'):
     with open(path,'w') as file:
         file = json.dump(deleted_employees,file,indent=2)
+
+def save_config(path: str, data: dict):
+    with open(path,'w') as config:
+        config = json.dump(data,config,indent=2)
