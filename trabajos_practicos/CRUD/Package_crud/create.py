@@ -4,7 +4,7 @@ import json
 
 def id_generator(employees: list,deleted_employees:list) -> int: 
     max_employee_id = employees[-1]["id"] if len(employees) > 0 else 0
-    max_deleted_employee_id = deleted_employees[-1][0] if len(deleted_employees) > 0 else 0
+    max_deleted_employee_id = deleted_employees[-1]["id"] if len(deleted_employees) > 0 else 0
     if max_employee_id == 0 and max_deleted_employee_id == 0:
         id = 1
     elif max_employee_id >= max_deleted_employee_id:

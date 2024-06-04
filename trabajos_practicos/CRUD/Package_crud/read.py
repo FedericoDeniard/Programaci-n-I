@@ -112,6 +112,8 @@ def salary_report(employees: list):
     clear_screen()
     print(message)
     show_employees(employees)
+    with open('trabajos_practicos/CRUD/reports/reports.txt','a') as report:
+        report.write(message +'\n' + '-' * 40 + '\n')
 
 def filter_salary(employees: list):
     salary = get_int(message="Se mostraran todos los salarios superiores a lo que ingrese.\nIngrese el salario mínimo a filtrar: ",min=234315,max=10000000)

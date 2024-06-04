@@ -14,5 +14,13 @@
     "dni": 270000,
     "position": "Analista",
     "salary": 83456789
+  },
+  {
+    "id": 7,
+    "name": "Carlos",
+    "lastname": "Mart\u00ednez",
+    "dni": 234315,
+    "position": "Asistente",
+    "salary": 85678901
   }
 ]
