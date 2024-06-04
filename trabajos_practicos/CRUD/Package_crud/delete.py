@@ -6,7 +6,7 @@ def delete_employee(employees: list,deleted_employees: list):
     id_valid = check_id(employees,id)
     if id_valid != None:
         print("El siguiente empleado será elminado")
-        show_employee(employees[id_valid])
+        print(show_employee(employees[id_valid]))
         if get_confirm():
             remove = employees.pop(id_valid)
             deleted_employees.append(remove)

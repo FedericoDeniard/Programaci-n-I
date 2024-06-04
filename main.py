@@ -24,7 +24,8 @@ def menu():
             case 3:
                 delete_employee(employees,deleted_employees)
             case 4:
-                show_employees(employees)
+                print(show_employees(employees))
+                input("Presione una tecla para continuar...")
             case 5:
                 clear_screen()
                 print(f"El salario promedio es de: {get_average_salary(employees)}")
@@ -38,6 +39,7 @@ def menu():
                 salary_report(filter_salary(employees))
             case 9:
                 salary_report(filter_lastname(employees))
+
             case 10:
                 clear_screen()
                 save_employees(employees,'trabajos_practicos/CRUD/empleados.csv')

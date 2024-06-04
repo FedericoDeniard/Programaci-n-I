@@ -16,7 +16,7 @@ def update_employee(employees: list):
         }
 
         while True:
-            show_employee(employee_copy)
+            print(show_employee(employee_copy))
             option = get_int(message="¿Que desea modificar?\n1. Nombre\n2. Apellido\n3. DNI\n4. Puesto\n5. Salario\n6. Guardar\n7. Cancelar\n",min=1,max=7)
             clear_screen()
             match option:
@@ -33,7 +33,7 @@ def update_employee(employees: list):
                 case 6:
                     clear_screen()
                     print(f"Nuevos valores")            
-                    show_employee(employee_copy)
+                    print(show_employee(employee_copy))
                     if get_confirm():
                         employees[id_valid] = employee_copy
                         break

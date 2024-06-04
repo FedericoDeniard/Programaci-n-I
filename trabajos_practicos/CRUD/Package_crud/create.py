@@ -31,7 +31,7 @@ def new_employee(employees: list,max_employees: int,deleted_employees:list):
         salary = get_int(message="Salario del empleado: ",min=234315,max=10000000)
         
         employee = {"id":id,"name":name,"lastname":lastname,"dni":dni,"position":position,"salary":salary}
-        show_employee(employee)
+        print(show_employee(employee))
         confirm = get_confirm()
         if confirm:
             employees.append(employee)

@@ -21,15 +21,17 @@ def check_dni(employees:list, dni: int):
     return is_valid
 
 def show_employee(employee:dict):
-    print(f"{employee["name"]:^15}|{employee["lastname"]:^15}|{employee["position"]:^15}|{employee["salary"]:^15}")
+    employee_string = f"{employee["name"]:^15}|{employee["lastname"]:^15}|{employee["position"]:^15}|{employee["salary"]:^15}"
+    return employee_string
 
 def show_employees(employees: list):
-    header = ["Nombre","Apellido","Puesto","Salario"]
-    print(f"{header[0]:^15}|{header[1]:^15}|{header[2]:^15}|{header[3]:^15}")
+    message = []
+    message.append(f"{"Nombre":^15}|{"Apellido":^15}|{"Puesto":^15}|{"Salario":^15}")
+    
     for employee in employees:
-        show_employee(employee)
-    input("Presione una tecla para continuar")
+        message.append(show_employee(employee))
     clear_screen()
+    return "\n".join(message)
 
 def get_average_salary(employees:list):
     storage = 0
@@ -42,7 +44,7 @@ def search_dni(employees: list):
     dni = get_int("Ingrese el DNI: ",min=5000000,max=9999999)
     index_dni = check_dni(employees,dni)
     if index_dni != None:
-        show_employee(employees[index_dni])
+        print(show_employee(employees[index_dni]))
         input("Presione una tecla para continuar...")
         clear_screen()
     else:
@@ -111,9 +113,11 @@ def salary_report(employees: list):
         report_number.write(str(int(index) + 1))
     clear_screen()
     print(message)
-    show_employees(employees)
+    print(show_employees(employees))
+    input("Presione una tecla para continuar...")
+
     with open('trabajos_practicos/CRUD/reports/reports.txt','a') as report:
-        report.write(message +'\n' + '-' * 40 + '\n')
+        report.write(message +'\n' + show_employees(employees)+'\n'  +'-' * 40 + '\n')
 
 def filter_salary(employees: list):
     salary = get_int(message="Se mostraran todos los salarios superiores a lo que ingrese.\nIngrese el salario mínimo a filtrar: ",min=234315,max=10000000)

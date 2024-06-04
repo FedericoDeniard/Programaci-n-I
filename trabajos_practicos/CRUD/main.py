@@ -10,20 +10,22 @@ from trabajos_practicos.CRUD.Package_crud.delete import *
 from trabajos_practicos.CRUD.Package_crud.create import *
 
 def menu():
-    employees = []
+    employees = fetch_employees('trabajos_practicos/CRUD/empleados.csv')
+    deleted_employees = fetch_deleted('trabajos_practicos/CRUD/deleted.json')
 
     max_employees = 20
     while True:
-        option = get_int(message="1. Ingresar empleado\n2. Modificar empleado\n3. Eliminar empleado\n4. Mostrar todos\n5. Calcular salario promedio\n6. Buscar empleado por DNI\n7. Ordenar empleados\n8. Filtrar sueldo\n9. Informe sueldo\n10. Salir\n")
+        option = get_int(message="1. Ingresar empleado\n2. Modificar empleado\n3. Eliminar empleado\n4. Mostrar todos\n5. Calcular salario promedio\n6. Buscar empleado por DNI\n7. Ordenar empleados\n8. Filtrar sueldo\n9. Reporte apellido\n10. Salir\n",min=1,max=10)
         match option:
             case 1:
-                new_employee(employees,max_employees)
+                new_employee(employees,max_employees,deleted_employees)
             case 2:
                 update_employee(employees)
             case 3:
-                delete_employee(employees)
+                delete_employee(employees,deleted_employees)
             case 4:
-                show_employees(employees)
+                print(show_employees(employees))
+                input("Presione una tecla para continuar...")
             case 5:
                 clear_screen()
                 print(f"El salario promedio es de: {get_average_salary(employees)}")
@@ -36,7 +38,12 @@ def menu():
             case 8:
                 salary_report(filter_salary(employees))
             case 9:
+                salary_report(filter_lastname(employees))
+
+            case 10:
                 clear_screen()
+                save_employees(employees,'trabajos_practicos/CRUD/empleados.csv')
+                save_deleted_employees(deleted_employees,'trabajos_practicos/CRUD/deleted.json')
                 break
 
 menu()

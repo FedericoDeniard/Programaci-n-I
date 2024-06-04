@@ -1,8 +1,36 @@
-Reporte N°: 15
+Reporte N°: 23
 Fecha: 2024/06/04
-Cantidad de coincidencias: 1
+Cantidad de coincidencias: 0
+    Nombre     |   Apellido    |    Puesto     |    Salario    
 ----------------------------------------
-Reporte N°: 16
+Reporte N°: 24
 Fecha: 2024/06/04
 Cantidad de coincidencias: 1
+    Nombre     |   Apellido    |    Puesto     |    Salario    
+   Federico    |    Deniard    |  Supervisor   |    450000     
+----------------------------------------
+Reporte N°: 26
+Fecha: 2024/06/04
+Cantidad de coincidencias: 2
+    Nombre     |   Apellido    |    Puesto     |    Salario    
+      Ana      |     María     |   Encargado   |   94567890    
+     María     |   González    |  Supervisor   |   72345678    
+----------------------------------------
+Reporte N°: 27
+Fecha: 2024/06/04
+Cantidad de coincidencias: 1
+    Nombre     |   Apellido    |    Puesto     |    Salario    
+   Federico    |    Deniard    |  Supervisor   |    450000     
+----------------------------------------
+Reporte N°: 28
+Fecha: 2024/06/04
+Cantidad de coincidencias: 1
+    Nombre     |   Apellido    |    Puesto     |    Salario    
+   Federico    |    Deniard    |  Supervisor   |    450000     
+----------------------------------------
+Reporte N°: 29
+Fecha: 2024/06/04
+Cantidad de coincidencias: 1
+    Nombre     |   Apellido    |    Puesto     |    Salario    
+   Federico    |    Deniard    |  Supervisor   |    450000     
 ----------------------------------------
